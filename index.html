@@ -8,23 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <style>
-        /* COLORES E IDENTIDAD DEL PARTIDO (Sacados de tu logo) */
         :root {
-            --azul-oscuro: #002e4c; /* El azul profundo del logo */
-            --verde-logo: #32ff6a; /* El verde vibrante */
-            --amarillo-sol: #ffea38; /* El amarillo del sol */
+            --azul-oscuro: #002e4c;
+            --verde-logo: #32ff6a;
+            --amarillo-sol: #ffea38;
             --gris-texto: #334155;
             --clarito: #f8fafc;
             --crema-fondo: #fefdfa;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Montserrat', sans-serif;
@@ -33,26 +28,16 @@
             line-height: 1.7;
         }
 
-        /* ENCABEZADO SIMPLE CON LOGO */
+        /* HEADER */
         header {
             background-color: white;
             padding: 30px 20px;
             text-align: center;
             border-bottom: 3px solid var(--verde-logo);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
         }
-
-        .header-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        header img {
-            max-width: 180px; /* Tamaño del logo */
-            height: auto;
-            margin-bottom: 15px;
-        }
-
+        .header-container { max-width: 800px; margin: 0 auto; }
+        header img { max-width: 180px; height: auto; margin-bottom: 15px; }
         header p {
             font-size: 1.1rem;
             color: var(--azul-oscuro);
@@ -61,16 +46,40 @@
             letter-spacing: 1px;
         }
 
-        /* CONTENIDO PRINCIPAL SIMPLE */
-        main {
-            max-width: 700px;
+        /* NAVEGACIÓN INTERNA */
+        .nav-interna {
+            background-color: var(--azul-oscuro);
+            padding: 0 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-interna ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
         }
+        .nav-interna a {
+            display: block;
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 14px 14px;
+            transition: color 0.2s;
+        }
+        .nav-interna a:hover { color: var(--amarillo-sol); }
 
-        section {
-            margin-bottom: 50px;
-        }
+        /* MAIN */
+        main { max-width: 700px; margin: 0 auto; padding: 40px 20px; }
+
+        section { margin-bottom: 60px; scroll-margin-top: 60px; }
 
         h2 {
             font-family: 'Merriweather', serif;
@@ -82,13 +91,57 @@
             padding-bottom: 5px;
         }
 
+        h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--azul-oscuro);
+            font-size: 1.15rem;
+            margin: 28px 0 12px;
+        }
+
         p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
+            font-size: 1.05rem;
+            margin-bottom: 18px;
             text-align: justify;
         }
 
-        /* FRASE DE PINO DESTACADA */
+        /* LÍNEA DE TIEMPO */
+        .timeline { position: relative; padding-left: 28px; margin-top: 30px; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 6px;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--verde-logo), var(--amarillo-sol));
+        }
+        .timeline-item { position: relative; margin-bottom: 32px; }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--amarillo-sol);
+            border: 2px solid var(--azul-oscuro);
+        }
+        .timeline-item .anio {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--verde-logo);
+            background: var(--azul-oscuro);
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-bottom: 6px;
+        }
+        .timeline-item p { margin-bottom: 0; font-size: 1rem; }
+
+        /* FRASE DESTACADA */
         .frase-pino {
             background-color: var(--azul-oscuro);
             color: white;
@@ -97,29 +150,103 @@
             border-radius: 8px;
             border-left: 10px solid var(--verde-logo);
         }
-
         .frase-pino q {
             font-family: 'Merriweather', serif;
             font-style: italic;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             display: block;
             margin-bottom: 15px;
-            line-height: 1.6;
+            line-height: 1.7;
         }
-
         .frase-pino cite {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: var(--amarillo-sol);
             text-transform: uppercase;
             font-style: normal;
         }
 
-        /* CAUSAS EN LISTA SIMPLE */
-        .causas-lista {
-            margin-top: 30px;
+        /* FILMOGRAFÍA */
+        .pelicula-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-bottom: 14px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .pelicula-anio {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: white;
+            background: var(--azul-oscuro);
+            padding: 3px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        .pelicula-info { flex: 1; }
+        .pelicula-info strong {
+            font-family: 'Merriweather', serif;
+            color: var(--azul-oscuro);
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .pelicula-info span { font-size: 0.92rem; color: #64748b; }
+        .pelicula-premio {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #92400e;
+            background: #fef3c7;
+            border: 1px solid var(--amarillo-sol);
+            padding: 2px 8px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-top: 6px;
         }
 
+        /* LIBROS */
+        .libro-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-left: 5px solid var(--amarillo-sol);
+            border-radius: 0 8px 8px 0;
+            padding: 18px 20px;
+            margin-bottom: 14px;
+        }
+        .libro-item strong {
+            font-family: 'Merriweather', serif;
+            color: var(--azul-oscuro);
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .libro-item span { font-size: 0.92rem; color: #64748b; }
+
+        /* LEYES */
+        .ley-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-left: 5px solid var(--verde-logo);
+            border-radius: 0 8px 8px 0;
+            padding: 18px 20px;
+            margin-bottom: 14px;
+        }
+        .ley-item strong {
+            font-family: 'Merriweather', serif;
+            color: var(--azul-oscuro);
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .ley-item span { font-size: 0.92rem; color: #64748b; }
+
+        /* CAUSAS */
+        .causas-lista { margin-top: 30px; }
         .causa-item {
             background: white;
             padding: 20px;
@@ -128,23 +255,12 @@
             border: 1px solid #e2e8f0;
             display: flex;
             gap: 15px;
-            align-items: center; /* Alineación simple */
+            align-items: center;
         }
+        .causa-item i { color: var(--azul-oscuro); font-size: 1.8rem; width: 40px; text-align: center; }
+        .causa-item h3 { font-size: 1.1rem; color: var(--azul-oscuro); flex: 1; margin: 0; font-family: 'Montserrat', sans-serif; }
 
-        .causa-item i {
-            color: var(--azul-oscuro);
-            font-size: 1.8rem;
-            width: 40px;
-            text-align: center;
-        }
-
-        .causa-item h3 {
-            font-size: 1.2rem;
-            color: var(--azul-oscuro);
-            flex: 1;
-        }
-
-        /* BOTÓN DE AFILIACIÓN GIGANTE */
+        /* CTA */
         .cta-box {
             text-align: center;
             margin-top: 60px;
@@ -153,14 +269,12 @@
             border-radius: 12px;
             border: 2px solid #e2e8f0;
         }
-
         .cta-box h3 {
             font-family: 'Merriweather', serif;
             color: var(--azul-oscuro);
             margin-bottom: 20px;
             font-size: 1.5rem;
         }
-
         .boton-afiliar {
             display: inline-block;
             background-color: var(--azul-oscuro);
@@ -173,7 +287,6 @@
             transition: background-color 0.2s, transform 0.2s;
             border: 2px solid var(--azul-oscuro);
         }
-
         .boton-afiliar:hover {
             background-color: white;
             color: var(--azul-oscuro);
@@ -188,6 +301,19 @@
             border-top: 1px solid #e2e8f0;
             background-color: white;
         }
+
+        /* SEPARADOR */
+        .separador {
+            border: none;
+            border-top: 2px dashed #e2e8f0;
+            margin: 50px 0;
+        }
+
+        @media (max-width: 600px) {
+            h2 { font-size: 1.4rem; }
+            .nav-interna a { font-size: 0.7rem; padding: 12px 8px; }
+            .pelicula-item { flex-direction: column; gap: 8px; }
+        }
     </style>
 </head>
 <body>
@@ -199,22 +325,234 @@
         </div>
     </header>
 
+    <nav class="nav-interna">
+        <ul>
+            <li><a href="#origen">Origen</a></li>
+            <li><a href="#pino">Pino Solanas</a></li>
+            <li><a href="#cine">Cine</a></li>
+            <li><a href="#libros">Libros</a></li>
+            <li><a href="#leyes">Leyes</a></li>
+            <li><a href="#partido">El Partido</a></li>
+            <li><a href="#banderas">Banderas</a></li>
+        </ul>
+    </nav>
+
     <main>
-        <section>
+
+        <!-- ORIGEN -->
+        <section id="origen">
             <h2>De dónde venimos</h2>
             <p>Proyecto Sur nació bajo la urgencia de reconstruir los lazos sociales, políticos y éticos de nuestra Patria. Inspirados por las luchas históricas de nuestro pueblo y guiados por la mirada estratégica y profundamente humana de Fernando "Pino" Solanas, nos consolidamos como un espacio que no transa con las injusticias del presente.</p>
             <p>No entendemos la política como una carrera de cargos, sino como una herramienta de emancipación colectiva. Creemos que la soberanía de los recursos naturales, la justicia distributiva y la transparencia democrática son los pilares fundamentales para poner de pie a la Argentina.</p>
         </section>
 
-        <section class="frase-pino">
+        <div class="frase-pino">
             <q>La causa de la emancipación es la causa del hombre: su dignidad, su cultura y su felicidad. No hay país soberano sin justicia social.</q>
             <cite>— Fernando "Pino" Solanas</cite>
+        </div>
+
+        <!-- PINO SOLANAS -->
+        <section id="pino">
+            <h2>Fernando "Pino" Solanas</h2>
+            <p><em>1936 — 2020</em></p>
+
+            <p>Nació en Olivos en 1936, pero su historia pertenece a toda Argentina. Desde joven supo que el arte y la política no podían vivir separados. Estudió derecho, teatro y música, aunque fue con una cámara que encontró su voz más poderosa.</p>
+
+            <p>En los años 60, junto a su compañero Octavio Getino, se metió en las calles y los barrios a filmar lo que pocos se animaban a mostrar. El resultado fue <em>La hora de los hornos</em> — una trilogía rodada en la clandestinidad, prohibida por la dictadura, y vista a escondidas en sindicatos, facultades y casas de militantes. Una obra que sacudió conciencias en toda América Latina.</p>
+
+            <p>Cuando la Triple A lo puso en la lista de amenazados, tuvo que irse. El exilio en París fue duro, pero no lo apagó. Desde allí siguió creando, conectado con las Madres de Plaza de Mayo y los movimientos populares de Europa y América Latina. Con el regreso de la democracia volvió al país y filmó <em>Sur</em> (1988) — una película sobre la memoria, los sueños rotos y la esperanza — que le valió el premio al mejor director en Cannes. El único director argentino en lograrlo.</p>
+
+            <p>Pero Pino no se quedó en la pantalla. Sabía que Argentina necesitaba voces que dijeran la verdad también en el Congreso. Fue diputado, senador, candidato a presidente. Siempre incómodo para el poder, siempre del lado de los que menos tienen.</p>
+
+            <p>Falleció el 6 de noviembre de 2020 en París, donde se desempeñaba como embajador ante la UNESCO. Se fue de la misma ciudad que lo había cobijado en el exilio. Tenía 84 años y todavía tenía cosas que decir.</p>
         </section>
 
-        <section>
+        <hr class="separador">
+
+        <!-- CINE -->
+        <section id="cine">
+            <h2>La cámara como arma</h2>
+            <p>Pino Solanas no filmaba para entretener. Filmaba para despertar. Cada una de sus películas fue un acto político, un grito visual contra las injusticias, un intento de devolver al pueblo su propia historia.</p>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <span class="anio">1962</span>
+                    <p><strong>Seguir andando</strong> — Su primer cortometraje de ficción. Los primeros pasos de una mirada que cambiaría el cine latinoamericano.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="anio">1968</span>
+                    <p><strong>La hora de los hornos</strong> — Rodada en la clandestinidad junto a Octavio Getino. Una trilogía de más de cuatro horas sobre el neocolonialismo y la violencia en América Latina. Prohibida por la dictadura, se veía a escondidas en sótanos y sindicatos. Se difundió en más de 70 países y cambió para siempre el cine político.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="anio">1971</span>
+                    <p><strong>Perón: la revolución justicialista / Actualización doctrinaria para la toma del poder</strong> — Filmado junto a Perón en su exilio en Madrid. Un registro histórico único del líder hablando a su pueblo.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="anio">1975</span>
+                    <p><strong>Los hijos de Fierro</strong> — Su primer largometraje de ficción. Meses después de terminarlo, amenazado de muerte, tuvo que exiliarse.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="anio">1980</span>
+                    <p><strong>La mirada de los otros</strong> — Filmado en Francia durante el exilio. La distancia no apagó su mirada, la afiló.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="anio">1985</span>
+                    <p><strong>Tangos, el exilio de Gardel</strong> — Su regreso al cine con la democracia. Premio Especial del Jurado en el Festival de Venecia y Gran Premio en La Habana. Una "tanguedia" sobre el exilio argentino.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="anio">1988</span>
+                    <p><strong>Sur</strong> — Con música de Astor Piazzolla y un elenco extraordinario. La película sobre la memoria y los sueños interrumpidos por la dictadura. <span class="pelicula-premio">🏆 Mejor Director — Festival de Cannes</span></p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="anio">1992</span>
+                    <p><strong>El viaje</strong> — Una aventura cinematográfica que recorre América Latina de punta a punta, con una mirada crítica al menemismo.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="anio">1998</span>
+                    <p><strong>La nube</strong> — Premio en el Festival de Venecia. Un film que sigue siendo sorprendentemente actual.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="anio">2004</span>
+                    <p><strong>Memoria del saqueo</strong> — Un retrato demoledor del saqueo neoliberal de los 90. <span class="pelicula-premio">🏆 Oso de Oro a la Trayectoria — Festival de Berlín</span></p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="anio">2005</span>
+                    <p><strong>La dignidad de los nadies</strong> — Retratos de personas que sobrevivieron la crisis del 2001 con solidaridad y creatividad popular.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="anio">2007</span>
+                    <p><strong>Argentina latente</strong> — Un documental sobre el enorme potencial científico y tecnológico de nuestro país.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="anio">2008</span>
+                    <p><strong>Próxima estación</strong> — Sobre el deterioro del sistema ferroviario argentino. Una denuncia que anticipó tragedias.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="anio">2009–2010</span>
+                    <p><strong>La tierra sublevada: Oro Negro / Oro Impuro</strong> — Una díptico sobre la minería, el petróleo y la soberanía de nuestros recursos naturales.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="anio">2021</span>
+                    <p><strong>Tres en la deriva del acto creativo</strong> — Su última película, estrenada después de su muerte en el Festival de Mar del Plata y en Cannes Classics. Un legado cinematográfico que se niega a apagarse.</p>
+                </div>
+
+            </div>
+
+            <div class="frase-pino" style="margin-top: 40px;">
+                <q>El cine es un arma cargada de futuro. Una herramienta para despertar conciencias y cambiar el mundo.</q>
+                <cite>— Fernando "Pino" Solanas</cite>
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <!-- LIBROS -->
+        <section id="libros">
+            <h2>La palabra escrita</h2>
+            <p>Pino no solo habló desde la pantalla o el estrado del Congreso. También escribió. Sus libros son una extensión natural de su militancia — un registro vivo de sus ideas, sus batallas y su visión de país.</p>
+
+            <div class="libro-item">
+                <strong>📖 La mirada (1989)</strong>
+                <span>Una larga conversación con el intelectual Horacio González, donde Solanas se refiere a su método cinematográfico y a las relaciones entre el arte y los conflictos culturales de su tiempo. Un libro para entender cómo pensaba el artista detrás del político.</span>
+            </div>
+
+            <div class="libro-item">
+                <strong>📖 Causa Sur (2009)</strong>
+                <span>Una recopilación de artículos, reportajes, discursos y documentos de su militancia política desde 1989 hasta 2009. El prólogo fue escrito por el Premio Nobel de la Paz Adolfo Pérez Esquivel. Aquí el lector encuentra al hombre combativo, vehemente, apasionado, que investiga hasta dar con la verdad, desnuda los negociados alrededor de los recursos naturales y no pacta jamás.</span>
+            </div>
+
+            <div class="libro-item">
+                <strong>📖 El legado — Rescate del proyecto de Juan Domingo Perón (2016)</strong>
+                <span>Un trabajo para "rescatar el proyecto emancipador de Juan Perón" — no como nostalgia, sino como herramienta para pensar el presente y el futuro del país.</span>
+            </div>
+
+            <h3>🎵 Y también escribió canciones</h3>
+            <p>Pino Solanas es el autor de la letra del tango <em>Vuelvo al Sur</em>, con música de Astor Piazzolla. Una canción que habla de exilio, de regreso, de pertenencia. Como toda su obra, más política de lo que parece a primera escucha.</p>
+        </section>
+
+        <hr class="separador">
+
+        <!-- LEYES -->
+        <section id="leyes">
+            <h2>En el Congreso</h2>
+            <p>Cuando Pino llegó al Congreso, no fue a ocupar un sillón. Fue a dar batalla. Desde el primer día su propuesta se centró en la recuperación de los recursos naturales, el fin de los negociados de las grandes empresas y la reconstrucción del sistema ferroviario.</p>
+
+            <div class="ley-item">
+                <strong>⚖️ Ley de Glaciares (2010)</strong>
+                <span>Una de sus batallas más importantes y más recordadas. Promovida por Proyecto Sur junto a organizaciones sociales y asambleas ciudadanas de todo el país. Fue sancionada el 30 de septiembre de 2010 para proteger los glaciares — el agua del futuro — frente al avance de la minería. Una ley que los poderosos siguen intentando derogar.</span>
+            </div>
+
+            <div class="ley-item">
+                <strong>⚖️ Empresa Petrolera Estatal y prohibición de minería a cielo abierto</strong>
+                <span>En sus primeros días como diputado presentó estos dos proyectos: una empresa petrolera estatal soberana y la prohibición de la explotación minera a cielo abierto. Un desafío directo a las multinacionales que operaban en el sector.</span>
+            </div>
+
+            <div class="ley-item">
+                <strong>⚖️ Ferrocarriles para todos</strong>
+                <span>Durante años impulsó proyectos para reconstruir el sistema ferroviario desmantelado en los 90. Sostenía que "un país extenso como Argentina y productor de materia prima es inviable sin ferrocarril". Una verdad que el tiempo confirmó con tragedias evitables.</span>
+            </div>
+
+            <div class="ley-item">
+                <strong>⚖️ Ley de Educación Ambiental — "Ley Pino Solanas"</strong>
+                <span>Tras su fallecimiento, desde la Comisión de Recursos Naturales de la Cámara de Diputados se propuso bautizar la Ley de Educación Ambiental con su nombre, en homenaje a su lucha histórica por la justicia social y ambiental, desplegada tanto en su acción política como en toda su obra cinematográfica.</span>
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <!-- EL PARTIDO -->
+        <section id="partido">
+            <h2>Proyecto Sur — El Partido</h2>
+            <p>Después de la crisis de 2001 — cuando Argentina se cayó a pedazos y millones de personas perdieron todo — Pino Solanas entendió que hacía falta algo nuevo. No otro partido más, sino un movimiento que pusiera en el centro la soberanía, los recursos naturales, la cultura y la dignidad del pueblo.</p>
+            <p><strong>Así nació Proyecto Sur.</strong></p>
+            <p>La propuesta era clara y valiente: recuperar el petróleo y los recursos del país para ponerlos al servicio de todos, terminar con la pobreza desde adentro, sin recetas del exterior.</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="anio">2007</span>
+                    <p>Pino se presenta como candidato a presidente por Proyecto Sur. La propuesta: nacionalización del petróleo, soberanía de los recursos naturales, reconstrucción ferroviaria. Un programa que incomodó a los poderosos.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="anio">2009</span>
+                    <p>Pino llega al Congreso como diputado nacional por la Ciudad de Buenos Aires con el 24,2% de los votos. Desde el primer día presenta proyectos de ley que desafían a las multinacionales.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="anio">2013</span>
+                    <p>Con la coalición UNEN, Proyecto Sur lleva a Pino al Senado de la Nación con el 27,69% de los votos en la Ciudad de Buenos Aires. Una victoria contundente que demostró que otra política era posible.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="anio">2019</span>
+                    <p>Proyecto Sur integra el Frente de Todos. Pino es elegido diputado nacional. Luego es designado embajador ante la UNESCO en París — la ciudad que lo cobijó durante el exilio.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="anio">Hoy</span>
+                    <p>El movimiento sigue vivo en Lanús, Buenos Aires, Chaco y todo el país. Construido desde abajo, con vecinos, docentes, trabajadores y militantes que creen que otra Argentina es posible. Porque el Sur no es solo un punto cardinal — es una forma de mirar el mundo.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="separador">
+
+        <!-- BANDERAS -->
+        <section id="banderas">
             <h2>Nuestras Banderas</h2>
             <p>En Lanús, nuestra militancia camina junto al vecino. Defendemos el medio ambiente urbano, impulsamos la cultura popular y luchamos por la transparencia en la gestión de nuestra ciudad. Estas son nuestras 5 causas:</p>
-            
+
             <div class="causas-lista">
                 <div class="causa-item">
                     <i class="fa-solid fa-scale-balanced"></i>
@@ -241,15 +579,14 @@
 
         <section class="cta-box">
             <h3>¿Querés sumarte a transformar Lanús?</h3>
-            <p style="text-align: center; margin-bottom: 25px;">Tu participación es la fuerza que mueve este proyecto. Sumate a militar con nosotros.</p>
-            <a href="https://forms.gle/q7WvAxz5JTHsFoDp6" class="boton-afiliar">
-                ¡AFILIATE ACÁ!
-            </a>
+            <p style="text-align:center; margin-bottom:25px;">Tu participación es la fuerza que mueve este proyecto. Sumate a militar con nosotros.</p>
+            <a href="https://forms.gle/q7WvAxz5JTHsFoDp6" class="boton-afiliar">¡AFILIATE ACÁ!</a>
         </section>
+
     </main>
 
     <footer>
-        <p>© 2026 Movimiento Proyecto Sur Lanús. <br>Político • Social • Cultural.</p>
+        <p>© 2026 Movimiento Proyecto Sur Lanús.<br>Político • Social • Cultural.</p>
     </footer>
 
 </body>
