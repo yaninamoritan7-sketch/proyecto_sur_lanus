@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Historia - Proyecto Sur Lanús</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* COLORES E IDENTIDAD DEL PARTIDO (Sacados de tu logo) */
+        :root {
+            --azul-oscuro: #002e4c; /* El azul profundo del logo */
+            --verde-logo: #32ff6a; /* El verde vibrante */
+            --amarillo-sol: #ffea38; /* El amarillo del sol */
+            --gris-texto: #334155;
+            --clarito: #f8fafc;
+            --crema-fondo: #fefdfa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--crema-fondo);
+            color: var(--gris-texto);
+            line-height: 1.7;
+        }
+
+        /* ENCABEZADO SIMPLE CON LOGO */
+        header {
+            background-color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--verde-logo);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header img {
+            max-width: 180px; /* Tamaño del logo */
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--azul-oscuro);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* CONTENIDO PRINCIPAL SIMPLE */
+        main {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-family: 'Merriweather', serif;
+            color: var(--azul-oscuro);
+            font-size: 1.7rem;
+            margin-bottom: 25px;
+            border-bottom: 4px solid var(--amarillo-sol);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* FRASE DE PINO DESTACADA */
+        .frase-pino {
+            background-color: var(--azul-oscuro);
+            color: white;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 8px;
+            border-left: 10px solid var(--verde-logo);
+        }
+
+        .frase-pino q {
+            font-family: 'Merriweather', serif;
+            font-style: italic;
+            font-size: 1.25rem;
+            display: block;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .frase-pino cite {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--amarillo-sol);
+            text-transform: uppercase;
+            font-style: normal;
+        }
+
+        /* CAUSAS EN LISTA SIMPLE */
+        .causas-lista {
+            margin-top: 30px;
+        }
+
+        .causa-item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            gap: 15px;
+            align-items: center; /* Alineación simple */
+        }
+
+        .causa-item i {
+            color: var(--azul-oscuro);
+            font-size: 1.8rem;
+            width: 40px;
+            text-align: center;
+        }
+
+        .causa-item h3 {
+            font-size: 1.2rem;
+            color: var(--azul-oscuro);
+            flex: 1;
+        }
+
+        /* BOTÓN DE AFILIACIÓN GIGANTE */
+        .cta-box {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px 20px;
+            background-color: white;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+        }
+
+        .cta-box h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--azul-oscuro);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .boton-afiliar {
+            display: inline-block;
+            background-color: var(--azul-oscuro);
+            color: white;
+            text-decoration: none;
+            padding: 18px 36px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            transition: background-color 0.2s, transform 0.2s;
+            border: 2px solid var(--azul-oscuro);
+        }
+
+        .boton-afiliar:hover {
+            background-color: white;
+            color: var(--azul-oscuro);
+            transform: translateY(-3px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="https://i.ibb.co/5M5V3xS/logo-sur-lanus.png" alt="Logo Movimiento Proyecto Sur Lanús">
+            <p>Nuestra Historia y Causas Fundamentales</p>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>De dónde venimos</h2>
+            <p>Proyecto Sur nació bajo la urgencia de reconstruir los lazos sociales, políticos y éticos de nuestra Patria. Inspirados por las luchas históricas de nuestro pueblo y guiados por la mirada estratégica y profundamente humana de Fernando "Pino" Solanas, nos consolidamos como un espacio que no transa con las injusticias del presente.</p>
+            <p>No entendemos la política como una carrera de cargos, sino como una herramienta de emancipación colectiva. Creemos que la soberanía de los recursos naturales, la justicia distributiva y la transparencia democrática son los pilares fundamentales para poner de pie a la Argentina.</p>
+        </section>
+
+        <section class="frase-pino">
+            <q>La causa de la emancipación es la causa del hombre: su dignidad, su cultura y su felicidad. No hay país soberano sin justicia social.</q>
+            <cite>— Fernando "Pino" Solanas</cite>
+        </section>
+
+        <section>
+            <h2>Nuestras Banderas</h2>
+            <p>En Lanús, nuestra militancia camina junto al vecino. Defendemos el medio ambiente urbano, impulsamos la cultura popular y luchamos por la transparencia en la gestión de nuestra ciudad. Estas son nuestras 5 causas:</p>
+            
+            <div class="causas-lista">
+                <div class="causa-item">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <h3>1. Igualdad y Justicia Social</h3>
+                </div>
+                <div class="causa-item">
+                    <i class="fa-solid fa-leaf"></i>
+                    <h3>2. Recuperación de los Recursos</h3>
+                </div>
+                <div class="causa-item">
+                    <i class="fa-solid fa-users-rectangle"></i>
+                    <h3>3. Democratización de la Democracia</h3>
+                </div>
+                <div class="causa-item">
+                    <i class="fa-solid fa-book-open"></i>
+                    <h3>4. Cultura y Educación</h3>
+                </div>
+                <div class="causa-item">
+                    <i class="fa-solid fa-gears"></i>
+                    <h3>5. Reconstrucción Industrial y Trabajo</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-box">
+            <h3>¿Querés sumarte a transformar Lanús?</h3>
+            <p style="text-align: center; margin-bottom: 25px;">Tu participación es la fuerza que mueve este proyecto. Sumate a militar con nosotros.</p>
+            <a href="https://forms.gle/q7WvAxz5JTHsFoDp6" class="boton-afiliar">
+                ¡AFILIATE ACÁ!
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Movimiento Proyecto Sur Lanús. <br>Político • Social • Cultural.</p>
+    </footer>
+
+</body>
+</html>
