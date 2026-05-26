@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Sur Lanús - Identidad y Causa Popular</title>
+    <title>Proyecto Sur Lanús</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        /* PALETA DE COLORES EXACTA DEL LOGO */
         :root {
-            --azul-logo: #004b23;        /* El azul/verde oscuro de las letras principales */
-            --verde-logo: #009245;       /* El verde brillante de las franjas */
-            --amarillo-logo: #fcee21;    /* El amarillo vibrante del sol */
-            --oscuro-texto: #1e293b;
-            --crema-fondo: #f9fbf7;      /* Un blanco con un sutil tinte verde ecológico muy limpio */
+            --verde-principal: #007A33;
+            --amarillo-sol: #FFD100;
+            --oscuro: #1E293B;
+            --fondo-crema: #F8FAFC;
         }
 
         * {
@@ -27,215 +25,154 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--crema-fondo);
-            color: var(--oscuro-texto);
+            background-color: var(--fondo-crema);
+            color: var(--oscuro);
             line-height: 1.6;
         }
 
-        /* ENCABEZADO / HERO */
         header {
-            background: linear-gradient(135deg, var(--azul-logo) 0%, #002511 100%);
+            background-color: var(--verde-principal);
             color: white;
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: center;
-            border-bottom: 6px solid var(--verde-logo);
+            border-bottom: 8px solid var(--amarillo-sol);
         }
 
-        .header-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* LOGO OFICIAL */
-        .logo-partido {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
+        .logo-contenedor {
+            width: 140px;
+            height: 140px;
             background-color: white;
-            padding: 4px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .logo-img {
+            width: 85%;
+            height: 85%;
             object-fit: contain;
         }
 
         header h1 {
-            font-family: 'Merriweather', serif;
-            font-size: 2.4rem;
-            margin-bottom: 10px;
+            font-size: 2.5rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
-            color: white;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
         }
 
         header p {
-            font-size: 1.15rem;
-            color: var(--amarillo-logo); /* Resalta con el amarillo del sol */
+            font-size: 1.2rem;
+            color: var(--amarillo-sol);
             font-weight: 600;
-            max-width: 600px;
-            margin: 0 auto;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
-        /* CONTENIDO PRINCIPAL */
         main {
-            max-width: 750px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
         section {
-            margin-bottom: 45px;
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         h2 {
-            font-family: 'Merriweather', serif;
-            color: var(--azul-logo);
-            font-size: 1.7rem;
-            margin-bottom: 20px;
-            border-left: 6px solid var(--verde-logo);
-            padding-left: 12px;
+            color: var(--verde-principal);
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+            border-bottom: 3px solid var(--amarillo-sol);
+            padding-bottom: 5px;
+            display: inline-block;
         }
 
         p {
+            margin-bottom: 15px;
             font-size: 1.05rem;
-            margin-bottom: 20px;
-            color: #2c3e50;
+            color: #334155;
             text-align: justify;
         }
 
-        /* BLOQUE HISTÓRICO CON FOTO DE PINO SOLANAS */
-        .bloque-pino {
-            background-color: white;
-            border-top: 4px solid var(--verde-logo);
-            border-bottom: 4px solid var(--azul-logo);
-            padding: 30px;
-            margin: 40px 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        .pino-container {
             text-align: center;
+            padding: 20px 0;
         }
 
-        .foto-pino {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--amarillo-logo);
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-
-        .bloque-pino q {
-            font-family: 'Merriweather', serif;
-            font-style: italic;
-            font-size: 1.2rem;
-            color: #1a252f;
-            display: block;
-            margin-bottom: 15px;
-            line-height: 1.7;
-        }
-
-        .bloque-pino cite {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--azul-logo);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-style: normal;
-        }
-
-        /* LAS 5 CAUSAS */
-        .causa-item {
-            background: white;
-            padding: 22px;
-            margin-bottom: 15px;
+        .pino-banner {
+            max-width: 100%;
+            height: auto;
             border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            display: flex;
-            gap: 15px;
-            align-items: flex-start;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.01);
-            border-left: 4px solid var(--verde-logo);
+            border: 3px solid var(--verde-principal);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        .causa-item i {
-            color: var(--azul-logo);
-            font-size: 1.5rem;
-            margin-top: 3px;
-            background-color: #f0f7f4;
-            padding: 10px;
-            border-radius: 50%;
+        .causa {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #F1F5F9;
+            border-left: 5px solid var(--verde-principal);
+            border-radius: 4px;
         }
 
-        .causa-item h3 {
-            font-size: 1.15rem;
-            color: var(--azul-logo);
+        .causa h3 {
+            color: var(--verde-principal);
             margin-bottom: 5px;
         }
 
-        /* LLAMADO A LA ACCIÓN (AFILIACIÓN) */
-        .cta-box {
-            background: linear-gradient(135deg, #004b23 0%, #002511 100%);
-            color: white;
-            padding: 40px 30px;
-            border-radius: 12px;
+        .boton-container {
             text-align: center;
-            margin-top: 50px;
-            box-shadow: 0 6px 15px rgba(0, 75, 35, 0.2);
+            margin-top: 40px;
         }
 
-        .cta-box h3 {
-            font-family: 'Merriweather', serif;
-            color: var(--amarillo-logo);
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-
-        .cta-box p {
-            color: #e2e8f0;
-            text-align: center;
-        }
-
-        .boton-afiliar {
+        .btn-afiliar {
             display: inline-block;
-            background-color: var(--amarillo-logo);
-            color: #002511;
+            background-color: var(--amarillo-sol);
+            color: #000;
             text-decoration: none;
-            padding: 16px 36px;
+            padding: 15px 40px;
             font-weight: 700;
             font-size: 1.2rem;
-            border-radius: 50px;
-            margin-top: 15px;
-            box-shadow: 0 4px 14px rgba(252, 238, 33, 0.4);
-            transition: transform 0.2s, box-shadow 0.2s;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
         }
 
-        .boton-afiliar:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(252, 238, 33, 0.6);
+        .btn-afiliar:hover {
+            transform: scale(1.05);
         }
 
         footer {
             text-align: center;
-            padding: 30px 20px;
-            font-size: 0.85rem;
-            color: #64748b;
-            border-top: 1px solid #e2e8f0;
-            background-color: white;
+            padding: 30px;
+            margin-top: 50px;
+            background-color: var(--oscuro);
+            color: #94A3B8;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="header-container">
-            <img src="https://i.ibb.co/6wByY7g9/proyectosur-logo.jpg" alt="Logo Proyecto Sur Lanús" class="logo-partido">
-            <h1>PROYECTO SUR LANÚS</h1>
-            <p>Causa Popular, Ecológica y Cultural</p>
+        <div class="logo-contenedor">
+            <svg class="logo-img" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="45" fill="#007A33"/>
+                <circle cx="50" cy="50" r="38" fill="none" stroke="#FFD100" stroke-width="3"/>
+                <circle cx="50" cy="45" r="16" fill="#FFD100"/>
+                <path d="M25,70 Q50,55 75,70" fill="none" stroke="#FFD100" stroke-width="5" stroke-linecap="round"/>
+                <text x="50" y="49" font-family='Montserrat' font-weight="700" font-size="12" fill="#007A33" text-anchor="middle">PS</text>
+            </svg>
         </div>
+        <h1>PROYECTO SUR LANÚS</h1>
+        <p>Causa Popular, Ecológica y Cultural</p>
     </header>
 
     <main>
@@ -245,66 +182,37 @@
             <p>No entendemos la política como una carrera de cargos, sino como una herramienta de emancipación colectiva. Creemos que la soberanía de los recursos naturales, la justicia distributiva y la transparencia democrática son los pilares fundamentales para poner de pie a la Argentina.</p>
         </section>
 
-        <section class="bloque-pino">
-            <img src="https://i.ibb.co/v6M4B5yP/pino-solanas.jpg" alt="Fernando Pino Solanas" class="foto-pino">
-            <q>"La causa de la emancipación es la causa del hombre: su dignidad, su cultura y su felicidad. No hay país soberano sin justicia social, ni justicia social sin soberanía sobre nuestro destino."</q>
-            <cite>— Fernando "Pino" Solanas</cite>
-        </section>
-
         <section>
-            <h2>Nuestra Construcción en Lanús</h2>
-            <p>En nuestra ciudad, la militancia de Proyecto Sur se arraiga en el asfalto y en la tierra de cada barrio. Desde Valentín Alsina hasta Monte Chingolo, pasando por Remedios de Escalada y Lanús Este y Oeste, caminamos junto al vecino que la pelea día a día.</p>
-            <p>Trabajamos activamente en el territorio impulsando espacios de debate cultural, relevamientos comunitarios y redes de contención social. Entendemos que los grandes cambios nacionales empiezan escuchando las necesidades urgentes de nuestra propia manzana, defendiendo el medio ambiente urbano y devolviéndole el protagonismo a los ciudadanos.</p>
-        </section>
-
-        <section>
-            <h2>Las 5 Causas Fundamentales</h2>
-            <div class="causas-lista">
-                <div class="causa-item">
-                    <i class="fa-solid fa-scale-balanced"></i>
-                    <div>
-                        <h3>1. Igualdad y Justicia Social</h3>
-                        <p>Erradicar la pobreza y garantizar que cada vecino tenga acceso real a la salud, la educación y un trabajo digno.</p>
-                    </div>
-                </div>
-                <div class="causa-item">
-                    <i class="fa-solid fa-leaf"></i>
-                    <div>
-                        <h3>2. Recuperación de los Recursos</h3>
-                        <p>Defensa irrestricta de nuestro medio ambiente, el agua, los espacios verdes públicos y la soberanía energética.</p>
-                    </div>
-                </div>
-                <div class="causa-item">
-                    <i class="fa-solid fa-users-rectangle"></i>
-                    <div>
-                        <h3>3. Democratización de la Democracia</h3>
-                        <p>Transparencia absoluta en la gestión pública y creación de foros vecinales para que el pueblo decida el destino de sus barrios.</p>
-                    </div>
-                </div>
-                <div class="causa-item">
-                    <i class="fa-solid fa-book-open"></i>
-                    <div>
-                        <h3>4. Cultura y Educación</h3>
-                        <p>Revalorizar la identidad nacional y local, promoviendo valores de solidaridad frente al individualismo.</p>
-                    </div>
-                </div>
-                <div class="causa-item">
-                    <i class="fa-solid fa-gears"></i>
-                    <div>
-                        <h3>5. Reconstrucción Industrial y Trabajo</h3>
-                        <p>Fomento a las pymes locales, talleres de oficio y cooperativas para reactivar el motor productivo de Lanús.</p>
-                    </div>
-                </div>
+            <h2>De dónde venimos</h2>
+            <p>Nuestra propuesta se organiza en torno a cinco grandes causas que guían nuestro andar diario en los barrios de Lanús:</p>
+            
+            <div class="causa">
+                <h3>1. Causa de la Justicia Social</h3>
+                <p>Por la redistribución de la riqueza, el acceso a la salud, educación pública de calidad y trabajo digno para todos los vecinos.</p>
+            </div>
+            <div class="causa">
+                <h3>2. Causa Ecológica y Ambiental</h3>
+                <p>Defensa del patrimonio natural, control de la contaminación industrial urbana y desarrollo sostenible en cada localidad.</p>
+            </div>
+            <div class="causa">
+                <h3>3. Causa de la Soberanía</h3>
+                <p>Recuperación y control social sobre nuestros recursos estratégicos y servicios públicos esenciales.</p>
+            </div>
+            <div class="causa">
+                <h3>4. Causa Cultural y Educativa</h3>
+                <p>Promover nuestra identidad popular, fortaleciendo los clubes de barrio, centros culturales y la memoria histórica.</p>
+            </div>
+            <div class="causa">
+                <h3>5. Causa Ética y Democrática</h3>
+                <p>Transparencia absoluta contra la corrupción institucional y participación comunitaria real en la toma de decisiones.</p>
             </div>
         </section>
 
-        <section class="cta-box">
-            <h3>¿Querés ser parte del cambio en tu barrio?</h3>
-            <p>Tu participación es la fuerza que mueve este proyecto. Sumate a militar con nosotros, aportá tus ideas y transformemos Lanús juntos.</p>
-            <a href="https://forms.gle/q7WvAxz5JTHsFoDp6" class="boton-afiliar" target="_blank">
+        <div class="boton-container">
+            <a href="https://forms.gle/q7WvAxz5JTHsFoDp6" class="btn-afiliar" target="_blank">
                 <i class="fa-solid fa-pen-to-square"></i> ¡AFILIATE ACÁ!
             </a>
-        </section>
+        </div>
     </main>
 
     <footer>
